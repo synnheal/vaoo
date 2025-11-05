@@ -33,36 +33,27 @@ export default function Hero() {
       animate();
     };
 
-    // GSAP Hero animations
+    // GSAP Hero animations - simplified without opacity to ensure content is visible
     if (heroRef.current) {
-      gsap.from('.hero-title', {
-        y: 50,
-        opacity: 0,
-        duration: 1,
-        delay: 0.3
-      });
+      gsap.fromTo('.hero-title',
+        { y: 30 },
+        { y: 0, duration: 1, delay: 0.3, ease: 'power2.out' }
+      );
 
-      gsap.from('.hero-subtitle', {
-        y: 30,
-        opacity: 0,
-        duration: 1,
-        delay: 0.6
-      });
+      gsap.fromTo('.hero-subtitle',
+        { y: 20 },
+        { y: 0, duration: 1, delay: 0.6, ease: 'power2.out' }
+      );
 
-      gsap.from('.hero-cta', {
-        y: 30,
-        opacity: 0,
-        duration: 1,
-        delay: 0.9
-      });
+      gsap.fromTo('.hero-cta',
+        { y: 20 },
+        { y: 0, duration: 1, delay: 0.9, ease: 'power2.out' }
+      );
 
-      gsap.from('.hero-stats', {
-        y: 30,
-        opacity: 0,
-        duration: 1,
-        delay: 1.2,
-        onComplete: animateCounters
-      });
+      gsap.fromTo('.hero-stats',
+        { y: 20 },
+        { y: 0, duration: 1, delay: 1.2, ease: 'power2.out', onComplete: animateCounters }
+      );
     }
   }, []);
 

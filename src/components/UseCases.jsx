@@ -8,20 +8,25 @@ export default function UseCases() {
   const cardRefs = useRef([]);
 
   useEffect(() => {
-    // GSAP scroll animations for usecase cards
+    // GSAP scroll animations for usecase cards - simplified without opacity
     cardRefs.current.forEach((card, index) => {
       if (card) {
-        gsap.from(card, {
-          y: 80,
-          opacity: 0,
-          duration: 0.8,
-          delay: index * 0.2,
-          scrollTrigger: {
-            trigger: card,
-            start: 'top 85%',
-            toggleActions: 'play none none none'
+        gsap.fromTo(card,
+          {
+            y: 50,
+          },
+          {
+            y: 0,
+            duration: 0.8,
+            delay: index * 0.2,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: card,
+              start: 'top 90%',
+              toggleActions: 'play none none none'
+            }
           }
-        });
+        );
       }
     });
   }, []);

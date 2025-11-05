@@ -8,20 +8,25 @@ export default function Concept() {
   const cardRefs = useRef([]);
 
   useEffect(() => {
-    // GSAP scroll animations
+    // GSAP scroll animations - simplified without opacity
     cardRefs.current.forEach((card, index) => {
       if (card) {
-        gsap.from(card, {
-          y: 80,
-          opacity: 0,
-          duration: 0.8,
-          delay: index * 0.2,
-          scrollTrigger: {
-            trigger: card,
-            start: 'top 85%',
-            toggleActions: 'play none none none'
+        gsap.fromTo(card,
+          {
+            y: 50,
+          },
+          {
+            y: 0,
+            duration: 0.8,
+            delay: index * 0.2,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: card,
+              start: 'top 90%',
+              toggleActions: 'play none none none'
+            }
           }
-        });
+        );
       }
     });
 
@@ -39,20 +44,15 @@ export default function Concept() {
         const rotateX = (y - centerY) / 10;
         const rotateY = (centerX - x) / 10;
 
-        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px)`;
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
       };
 
       const handleMouseLeave = () => {
-        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
       };
 
       card.addEventListener('mousemove', handleMouseMove);
       card.addEventListener('mouseleave', handleMouseLeave);
-
-      return () => {
-        card.removeEventListener('mousemove', handleMouseMove);
-        card.removeEventListener('mouseleave', handleMouseLeave);
-      };
     });
   }, []);
 
