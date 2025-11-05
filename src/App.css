@@ -761,6 +761,7 @@ section {
     gap: var(--spacing-md);
     margin-bottom: var(--spacing-lg);
     align-items: center;
+    min-height: 120px;
 }
 
 .timeline-item:nth-child(even) .timeline-content {
@@ -818,17 +819,18 @@ section {
 .timeline-visual {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .icon-circle {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     background: linear-gradient(135deg, rgba(243, 216, 157, 0.2), rgba(243, 216, 157, 0.1));
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2rem;
+    font-size: 1.8rem;
     transition: all var(--transition-normal);
 }
 
