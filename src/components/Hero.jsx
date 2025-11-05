@@ -1,0 +1,127 @@
+import { useEffect, useRef, useState } from 'react';
+import { gsap } from 'gsap';
+
+export default function Hero() {
+  const [stats, setStats] = useState({ discount: 0, rentable: 0, commission: 0 });
+  const heroRef = useRef(null);
+  const hasAnimated = useRef(false);
+
+  useEffect(() => {
+    // Counter animation
+    const animateCounters = () => {
+      if (hasAnimated.current) return;
+      hasAnimated.current = true;
+
+      const duration = 2000;
+      const startTime = Date.now();
+
+      const animate = () => {
+        const elapsed = Date.now() - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+
+        setStats({
+          discount: Math.floor(40 * progress),
+          rentable: Math.floor(100 * progress),
+          commission: 0
+        });
+
+        if (progress < 1) {
+          requestAnimationFrame(animate);
+        }
+      };
+
+      animate();
+    };
+
+    // GSAP Hero animations
+    if (heroRef.current) {
+      gsap.from('.hero-title', {
+        y: 50,
+        opacity: 0,
+        duration: 1,
+        delay: 0.3
+      });
+
+      gsap.from('.hero-subtitle', {
+        y: 30,
+        opacity: 0,
+        duration: 1,
+        delay: 0.6
+      });
+
+      gsap.from('.hero-cta', {
+        y: 30,
+        opacity: 0,
+        duration: 1,
+        delay: 0.9
+      });
+
+      gsap.from('.hero-stats', {
+        y: 30,
+        opacity: 0,
+        duration: 1,
+        delay: 1.2,
+        onComplete: animateCounters
+      });
+    }
+  }, []);
+
+  const scrollToSection = (sectionId) => {
+    const element = document.querySelector(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  return (
+    <section className="hero" id="hero" ref={heroRef}>
+      <div className="hero-background">
+        <div className="hero-carousel">
+          <div className="carousel-track">
+            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200" alt="Hôtel luxueux" className="carousel-img" />
+            <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1200" alt="Chambre d'hôtel" className="carousel-img" />
+            <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=1200" alt="Hall d'hôtel" className="carousel-img" />
+            <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1200" alt="Suite premium" className="carousel-img" />
+            <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=1200" alt="Hôtel de charme" className="carousel-img" />
+            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200" alt="Hôtel luxueux" className="carousel-img" />
+            <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1200" alt="Chambre d'hôtel" className="carousel-img" />
+            <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=1200" alt="Hall d'hôtel" className="carousel-img" />
+          </div>
+          <div className="image-overlay">Image droit d'auteur à changer</div>
+        </div>
+        <div className="hero-gradient"></div>
+      </div>
+      <div className="container hero-content">
+        <h1 className="hero-title">
+          Vos chambres invendues<br />
+          valent de l'<span className="gold-text">or</span>
+        </h1>
+        <p className="hero-subtitle">Rentabilisez chaque nuit avec notre plateforme</p>
+        <div className="hero-cta">
+          <a href="#inscription-hotel" className="btn btn-hero btn-primary" onClick={(e) => { e.preventDefault(); scrollToSection('#inscription-hotel'); }}>Je suis hôtelier</a>
+          <a href="#inscription-voyageur" className="btn btn-hero btn-secondary" onClick={(e) => { e.preventDefault(); scrollToSection('#inscription-voyageur'); }}>Je cherche un hôtel</a>
+        </div>
+        <div className="hero-stats">
+          <div className="stat-item">
+            <span className="stat-number">{stats.discount}</span><span className="stat-symbol">%</span>
+            <p className="stat-label">de réduction moyenne</p>
+          </div>
+          <div className="stat-item">
+            <span className="stat-number">{stats.rentable}</span><span className="stat-symbol">%</span>
+            <p className="stat-label">rentable pour les hôtels</p>
+          </div>
+          <div className="stat-item">
+            <span className="stat-number">{stats.commission}</span>
+            <p className="stat-label">commission sur réservation</p>
+          </div>
+        </div>
+      </div>
+      <div className="scroll-indicator">
+        <span>Découvrir</span>
+        <div className="mouse">
+          <div className="wheel"></div>
+        </div>
+      </div>
+    </section>
+  );
+}
