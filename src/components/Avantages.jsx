@@ -14,20 +14,25 @@ export default function Avantages() {
   const itemRefs = useRef([]);
 
   useEffect(() => {
-    // GSAP scroll animations for avantage items
+    // GSAP scroll animations for avantage items - simplified without opacity
     itemRefs.current.forEach((item, index) => {
       if (item) {
-        gsap.from(item, {
-          x: -50,
-          opacity: 0,
-          duration: 0.6,
-          delay: index * 0.15,
-          scrollTrigger: {
-            trigger: item,
-            start: 'top 85%',
-            toggleActions: 'play none none none'
+        gsap.fromTo(item,
+          {
+            x: -30,
+          },
+          {
+            x: 0,
+            duration: 0.6,
+            delay: index * 0.15,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: item,
+              start: 'top 90%',
+              toggleActions: 'play none none none'
+            }
           }
-        });
+        );
       }
     });
 

@@ -8,20 +8,25 @@ export default function Fonctionnement() {
   const itemRefs = useRef([]);
 
   useEffect(() => {
-    // GSAP scroll animations for timeline items
+    // GSAP scroll animations for timeline items - simplified without opacity
     itemRefs.current.forEach((item, index) => {
       if (item) {
-        gsap.from(item, {
-          scale: 0.8,
-          opacity: 0,
-          duration: 0.6,
-          delay: index * 0.2,
-          scrollTrigger: {
-            trigger: item,
-            start: 'top 85%',
-            toggleActions: 'play none none none'
+        gsap.fromTo(item,
+          {
+            scale: 0.95,
+          },
+          {
+            scale: 1,
+            duration: 0.6,
+            delay: index * 0.2,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: item,
+              start: 'top 90%',
+              toggleActions: 'play none none none'
+            }
           }
-        });
+        );
       }
     });
   }, []);
