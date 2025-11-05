@@ -696,6 +696,7 @@ section {
     display: flex;
     gap: var(--spacing-sm);
     justify-content: space-around;
+    align-items: center;
 }
 
 .result-item {

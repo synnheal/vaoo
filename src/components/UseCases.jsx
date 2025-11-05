@@ -42,7 +42,7 @@ export default function UseCases() {
         <div className="usecases-grid">
           <div className="usecase-card" ref={el => cardRefs.current[0] = el}>
             <div className="usecase-image">
-              <img src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=600" alt="Dernière minute" />
+              <img src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=600" alt="Dernière minute" loading="lazy" />
               <div className="image-overlay">Image droit d'auteur à changer</div>
             </div>
             <h3>Dernière minute</h3>
@@ -50,7 +50,7 @@ export default function UseCases() {
           </div>
           <div className="usecase-card" ref={el => cardRefs.current[1] = el}>
             <div className="usecase-image">
-              <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?w=600" alt="Périodes creuses" />
+              <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?w=600" alt="Périodes creuses" loading="lazy" />
               <div className="image-overlay">Image droit d'auteur à changer</div>
             </div>
             <h3>Périodes creuses</h3>
@@ -58,7 +58,7 @@ export default function UseCases() {
           </div>
           <div className="usecase-card" ref={el => cardRefs.current[2] = el}>
             <div className="usecase-image">
-              <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=600" alt="Groupes" />
+              <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=600" alt="Groupes" loading="lazy" />
               <div className="image-overlay">Image droit d'auteur à changer</div>
             </div>
             <h3>Réservations groupées</h3>

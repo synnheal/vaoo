@@ -2,26 +2,32 @@ import { useState } from 'react';
 
 const faqData = [
   {
+    id: 'faq-1',
     question: "C'est quoi Vaoo exactement ?",
     answer: "Vaoo est une plateforme de réservation d'hôtels axée sur les offres de dernière minute. Nous mettons en relation les hôteliers ayant des chambres invendues avec des voyageurs à la recherche de bons plans."
   },
   {
+    id: 'faq-2',
     question: "Comment fonctionne l'abonnement hôtel ?",
     answer: "L'abonnement mensuel est fixe et correspond au prix de votre chambre la plus chère. Par exemple, si votre suite coûte 150€, votre abonnement sera de 150€/mois. Aucune commission n'est prélevée sur vos réservations."
   },
   {
+    id: 'faq-3',
     question: "Quand sera disponible la plateforme ?",
     answer: "Nous sommes actuellement en phase de recrutement des premiers hôtels partenaires. Le lancement public est prévu prochainement. Inscrivez-vous pour être notifié !"
   },
   {
+    id: 'faq-4',
     question: "Pourquoi proposer des réductions ?",
     answer: "Une chambre louée à -30% génère toujours des revenus, tandis qu'une chambre vide ne rapporte rien. C'est une stratégie gagnante pour optimiser votre taux d'occupation."
   },
   {
+    id: 'faq-5',
     question: "Puis-je contrôler mes offres ?",
     answer: "Absolument ! Vous décidez quelles chambres proposer, quand les rendre disponibles, et quel pourcentage de réduction appliquer. Vous gardez le contrôle total."
   },
   {
+    id: 'faq-6',
     question: "Vaoo convient-il aux petits hôtels ?",
     answer: "Oui ! Que vous ayez 10 ou 100 chambres, Vaoo s'adapte à votre taille. Le modèle d'abonnement fixe est particulièrement avantageux pour les établissements de toutes tailles."
   }
@@ -45,7 +51,7 @@ export default function FAQ() {
         <div className="faq-grid">
           {faqData.map((item, index) => (
             <div
-              key={index}
+              key={item.id}
               className={`faq-item ${activeIndex === index ? 'active' : ''}`}
             >
               <div className="faq-question" onClick={() => toggleFAQ(index)}>
