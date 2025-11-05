@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useToast } from './Toast';
 
 function InscriptionForm({ type, title, intro, buttonText, buttonClass }) {
   const [formData, setFormData] = useState({});
