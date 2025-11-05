@@ -30,8 +30,10 @@ export default function Concept() {
       }
     });
 
-    // Card tilt effect
+    // Card tilt effect with cleanup
     const tiltCards = document.querySelectorAll('.card-tilt');
+    const handlers = [];
+
     tiltCards.forEach(card => {
       const handleMouseMove = (e) => {
         const rect = card.getBoundingClientRect();
@@ -53,7 +55,18 @@ export default function Concept() {
 
       card.addEventListener('mousemove', handleMouseMove);
       card.addEventListener('mouseleave', handleMouseLeave);
+
+      // Store handlers for cleanup
+      handlers.push({ card, handleMouseMove, handleMouseLeave });
     });
+
+    // Cleanup function
+    return () => {
+      handlers.forEach(({ card, handleMouseMove, handleMouseLeave }) => {
+        card.removeEventListener('mousemove', handleMouseMove);
+        card.removeEventListener('mouseleave', handleMouseLeave);
+      });
+    };
   }, []);
 
   return (

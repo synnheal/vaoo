@@ -82,7 +82,7 @@ export default function Avantages() {
         <div className="avantages-content">
           <div className="avantages-visual">
             <div className="image-container parallax-img">
-              <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800" alt="Réception d'hôtel moderne" />
+              <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800" alt="Réception d'hôtel moderne" loading="lazy" />
               <div className="image-overlay">Image droit d'auteur à changer</div>
             </div>
           </div>
