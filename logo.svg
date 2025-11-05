@@ -1,0 +1,17 @@
+<svg width="200" height="80" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- V -->
+  <path d="M 10 15 L 30 60 L 50 15" stroke="#5FD45F" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  
+  <!-- A -->
+  <path d="M 60 60 L 80 15 L 100 60" stroke="#5FD45F" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <line x1="68" y1="45" x2="92" y2="45" stroke="#5FD45F" stroke-width="10" stroke-linecap="round"/>
+  
+  <!-- O (cercle jaune) -->
+  <circle cx="135" cy="37.5" r="22" stroke="#F3D89D" stroke-width="12" fill="none"/>
+  
+  <!-- Flèche qui traverse le O -->
+  <path d="M 110 37.5 L 170 37.5 M 160 30 L 170 37.5 L 160 45" stroke="#5FD45F" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  
+  <!-- O final -->
+  <circle cx="185" cy="37.5" r="8" fill="#F3D89D"/>
+</svg>
