@@ -97,8 +97,8 @@ export default function Avantages() {
             <div className="avantage-item" ref={el => itemRefs.current[1] = el}>
               <div className="avantage-number">02</div>
               <div className="avantage-content">
-                <h3>Abonnement fixe, zéro commission</h3>
-                <p>Payez uniquement un abonnement mensuel basé sur votre chambre la plus chère. Pas de commission variable sur les réservations.</p>
+                <h3>Coûts prévisibles et maîtrisés</h3>
+                <p>Abonnement mensuel fixe basé sur votre chambre la plus chère. Commission minimale car nous misons sur le nombre d'hôtels partenaires, pas sur des frais élevés.</p>
               </div>
             </div>
             <div className="avantage-item" ref={el => itemRefs.current[2] = el}>

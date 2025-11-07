@@ -16,7 +16,7 @@
     
     /* Typographie */
     --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-display: 'Playfair Display', Georgia, serif;
+    --font-display: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
     
     /* Espacements */
     --spacing-xs: 0.5rem;

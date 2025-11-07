@@ -87,7 +87,7 @@ export default function Hero() {
           Vos chambres invendues<br />
           valent de l'<span className="gold-text">or</span>
         </h1>
-        <p className="hero-subtitle">Rentabilisez chaque nuit avec notre plateforme</p>
+        <p className="hero-subtitle">La plateforme qui connecte directement voyageurs et hôteliers</p>
         <div className="hero-cta">
           <a href="#inscription-hotel" className="btn btn-hero btn-primary" onClick={(e) => { e.preventDefault(); scrollToSection('#inscription-hotel'); }}>Je suis hôtelier</a>
           <a href="#inscription-voyageur" className="btn btn-hero btn-secondary" onClick={(e) => { e.preventDefault(); scrollToSection('#inscription-voyageur'); }}>Je cherche un hôtel</a>
