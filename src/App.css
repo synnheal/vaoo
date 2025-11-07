@@ -684,7 +684,7 @@ section {
     border: 2px solid var(--color-green);
     border-radius: var(--radius-sm);
     text-align: center;
-    font-family: var(--font-display);
+    font-family: var(--font-numbers);
     transition: all var(--transition-normal);
 }
 
@@ -692,6 +692,14 @@ section {
     outline: none;
     box-shadow: 0 0 0 4px rgba(95, 212, 95, 0.2);
     transform: scale(1.02);
+}
+
+.calculator-input span {
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: var(--font-numbers);
+    color: var(--color-gray);
+    text-align: center;
 }
 
 .calculator-result {
