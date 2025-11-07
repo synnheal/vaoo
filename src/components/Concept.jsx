@@ -82,17 +82,17 @@ export default function Concept() {
           <div className="concept-card card-tilt" ref={el => cardRefs.current[0] = el}>
             <div className="concept-icon">🎯</div>
             <h3>Pour les voyageurs</h3>
-            <p>Destination + Budget = Chambres d'hôtel à prix cassé. Profitez d'offres de dernière minute jusqu'à -40%.</p>
+            <p>Indiquez votre destination et votre budget. Laissez les hôtels vous proposer leurs meilleures offres de dernière minute jusqu'à -40%.</p>
           </div>
           <div className="concept-card card-tilt" ref={el => cardRefs.current[1] = el}>
             <div className="concept-icon">🏨</div>
             <h3>Pour les hôteliers</h3>
-            <p>Optimisez votre taux d'occupation en proposant vos chambres libres à prix réduit. Mieux vaut 100€ que 0€.</p>
+            <p>Remplissez vos chambres invendues en toute flexibilité. Vous fixez vos propres réductions selon vos besoins. Mieux vaut 100€ que 0€.</p>
           </div>
           <div className="concept-card card-tilt" ref={el => cardRefs.current[2] = el}>
             <div className="concept-icon">💰</div>
-            <h3>Modèle simple</h3>
-            <p>Abonnement mensuel fixe. Aucune commission sur les réservations. Prévisibilité totale de vos coûts.</p>
+            <h3>Modèle gagnant-gagnant</h3>
+            <p>Abonnement mensuel fixe pour les hôtels. Commission très faible, car nous jouons sur le volume. Relation directe et transparente.</p>
           </div>
         </div>
       </div>

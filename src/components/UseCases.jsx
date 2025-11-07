@@ -45,8 +45,8 @@ export default function UseCases() {
               <img src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=600" alt="Dernière minute" loading="lazy" />
               <div className="image-overlay">Image droit d'auteur à changer</div>
             </div>
-            <h3>Dernière minute</h3>
-            <p>Des chambres libres à 5 jours ? Proposez-les à prix réduit plutôt que de les laisser vides.</p>
+            <h3>Vraie dernière minute</h3>
+            <p>Des chambres libres dans 1-2 jours ? Proposez-les à prix réduit plutôt que de les laisser vides. Réactivité et rapidité.</p>
           </div>
           <div className="usecase-card" ref={el => cardRefs.current[1] = el}>
             <div className="usecase-image">
@@ -62,7 +62,7 @@ export default function UseCases() {
               <div className="image-overlay">Image droit d'auteur à changer</div>
             </div>
             <h3>Réservations groupées</h3>
-            <p>EVG, voyages d'entreprise : proposez des lots de chambres avec remise avantageuse.</p>
+            <p>EVG, EVJF, voyages d'entreprise, associations : remplissez plusieurs chambres d'un coup avec des offres attractives.</p>
           </div>
         </div>
       </div>

@@ -13,7 +13,7 @@ export default function Footer() {
           <div className="footer-brand">
             <img src="/logo.svg" alt="Vaoo Logo" className="footer-logo" />
             <p>La plateforme qui transforme vos chambres invendues en opportunités.</p>
-            <p className="footer-heritage">Entreprise créée il y a 15 ans, basée en France.</p>
+            <p className="footer-tagline">Rapidité • Confiance • Économie</p>
           </div>
           <div className="footer-links">
             <div className="footer-column">
@@ -34,11 +34,12 @@ export default function Footer() {
               </ul>
             </div>
             <div className="footer-column">
-              <h4>Contact</h4>
+              <h4>Légal & Contact</h4>
               <ul>
                 <li><a href="mailto:contact@vaoo.fr">contact@vaoo.fr</a></li>
-                <li>Mentions légales (à venir)</li>
-                <li>CGU (à venir)</li>
+                <li><a href="/mentions-legales.html">Mentions légales</a></li>
+                <li><a href="/politique-confidentialite.html">Politique de confidentialité</a></li>
+                <li><a href="/cgu.html">CGU/CGV</a></li>
               </ul>
             </div>
           </div>

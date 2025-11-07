@@ -53,8 +53,8 @@ export default function Fonctionnement() {
           <div className="timeline-item" ref={el => itemRefs.current[1] = el}>
             <div className="timeline-number">2</div>
             <div className="timeline-content">
-              <h3>Publication</h3>
-              <p>Proposez vos chambres disponibles avec des réductions de -30% à -40% selon vos besoins.</p>
+              <h3>Publication flexible</h3>
+              <p>Proposez vos chambres disponibles à la dernière minute (1-2 jours). Vous décidez librement du pourcentage de réduction selon vos besoins.</p>
             </div>
             <div className="timeline-visual">
               <div className="icon-circle">🏨</div>
