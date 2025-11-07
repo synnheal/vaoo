@@ -3,8 +3,26 @@ import { gsap } from 'gsap';
 
 export default function Hero() {
   const [stats, setStats] = useState({ discount: 0, rentable: 0, commission: 0 });
+  const [currentImage, setCurrentImage] = useState(0);
   const heroRef = useRef(null);
   const hasAnimated = useRef(false);
+
+  const images = [
+    "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200",
+    "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1200",
+    "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=1200",
+    "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1200",
+    "https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=1200"
+  ];
+
+  // Carousel automatique avec transitions fluides
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % images.length);
+    }, 5000); // Change d'image toutes les 5 secondes
+
+    return () => clearInterval(interval);
+  }, [images.length]);
 
   useEffect(() => {
     // Counter animation
@@ -68,16 +86,14 @@ export default function Hero() {
     <section className="hero" id="hero" ref={heroRef}>
       <div className="hero-background">
         <div className="hero-carousel">
-          <div className="carousel-track">
-            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200" alt="Hôtel luxueux" className="carousel-img" />
-            <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1200" alt="Chambre d'hôtel" className="carousel-img" />
-            <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=1200" alt="Hall d'hôtel" className="carousel-img" />
-            <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1200" alt="Suite premium" className="carousel-img" />
-            <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=1200" alt="Hôtel de charme" className="carousel-img" />
-            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200" alt="Hôtel luxueux" className="carousel-img" />
-            <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1200" alt="Chambre d'hôtel" className="carousel-img" />
-            <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=1200" alt="Hall d'hôtel" className="carousel-img" />
-          </div>
+          {images.map((img, index) => (
+            <img
+              key={index}
+              src={img}
+              alt={`Hôtel ${index + 1}`}
+              className={`carousel-img ${index === currentImage ? 'active' : ''}`}
+            />
+          ))}
           <div className="image-overlay">Image droit d'auteur à changer</div>
         </div>
         <div className="hero-gradient"></div>

@@ -302,26 +302,30 @@ button {
     overflow: hidden;
 }
 
-.carousel-track {
-    display: flex;
-    width: fit-content;
-    animation: carousel-scroll 40s linear infinite;
+.carousel-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out, transform 8s ease-out;
+    transform: scale(1);
 }
 
-@keyframes carousel-scroll {
+.carousel-img.active {
+    opacity: 1;
+    animation: kenburns 8s ease-out forwards;
+}
+
+@keyframes kenburns {
     0% {
-        transform: translateX(0);
+        transform: scale(1);
     }
     100% {
-        transform: translateX(-50%);
+        transform: scale(1.08);
     }
-}
-
-.carousel-img {
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    flex-shrink: 0;
 }
 
 .image-overlay {
@@ -684,7 +688,7 @@ section {
     border: 2px solid var(--color-green);
     border-radius: var(--radius-sm);
     text-align: center;
-    font-family: var(--font-display);
+    font-family: var(--font-numbers);
     transition: all var(--transition-normal);
 }
 
@@ -692,6 +696,14 @@ section {
     outline: none;
     box-shadow: 0 0 0 4px rgba(95, 212, 95, 0.2);
     transform: scale(1.02);
+}
+
+.calculator-input span {
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: var(--font-numbers);
+    color: var(--color-gray);
+    text-align: center;
 }
 
 .calculator-result {
