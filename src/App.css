@@ -310,13 +310,13 @@ button {
     height: 100%;
     object-fit: cover;
     opacity: 0;
-    transition: opacity 1.5s ease-in-out, transform 8s ease-out;
+    transition: opacity 1.5s ease-in-out, transform 4s ease-out;
     transform: scale(1);
 }
 
 .carousel-img.active {
     opacity: 1;
-    animation: kenburns 8s ease-out forwards;
+    animation: kenburns 4s ease-out forwards;
 }
 
 @keyframes kenburns {
