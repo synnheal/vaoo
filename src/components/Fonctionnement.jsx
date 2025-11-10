@@ -41,43 +41,27 @@ export default function Fonctionnement() {
 
         <div className="timeline">
           <div className="timeline-item" ref={el => itemRefs.current[0] = el}>
-            <div className="timeline-number">1</div>
             <div className="timeline-content">
               <h3>Abonnement</h3>
               <p>Souscrivez à un abonnement mensuel équivalent au prix de votre chambre la plus chère.</p>
             </div>
-            <div className="timeline-visual">
-              <div className="icon-circle">📝</div>
-            </div>
           </div>
           <div className="timeline-item" ref={el => itemRefs.current[1] = el}>
-            <div className="timeline-number">2</div>
             <div className="timeline-content">
               <h3>Publication flexible</h3>
               <p>Proposez vos chambres disponibles à la dernière minute (1-2 jours). Vous décidez librement du pourcentage de réduction selon vos besoins.</p>
             </div>
-            <div className="timeline-visual">
-              <div className="icon-circle">🏨</div>
-            </div>
           </div>
           <div className="timeline-item" ref={el => itemRefs.current[2] = el}>
-            <div className="timeline-number">3</div>
             <div className="timeline-content">
               <h3>Réservation</h3>
               <p>Les voyageurs réservent vos chambres en quelques clics. Vous recevez une notification instantanée.</p>
             </div>
-            <div className="timeline-visual">
-              <div className="icon-circle">✅</div>
-            </div>
           </div>
           <div className="timeline-item" ref={el => itemRefs.current[3] = el}>
-            <div className="timeline-number">4</div>
             <div className="timeline-content">
               <h3>Rentabilité</h3>
               <p>Augmentez votre taux d'occupation et vos revenus, même en période creuse.</p>
-            </div>
-            <div className="timeline-visual">
-              <div className="icon-circle">💎</div>
             </div>
           </div>
         </div>
