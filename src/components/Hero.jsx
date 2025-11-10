@@ -123,12 +123,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-      <div className="scroll-indicator">
-        <span>Découvrir</span>
-        <div className="mouse">
-          <div className="wheel"></div>
-        </div>
-      </div>
     </section>
   );
 }
